@@ -63,7 +63,6 @@ matrix:
            NORUN=1
     - env: TARGET=aarch64-apple-ios NORUN=1
     - env: TARGET=armv7-apple-ios NORUN=1
-
 script:
   - rustup target add $TARGET || true
   - cargo build --target $TARGET
