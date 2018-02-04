@@ -24,7 +24,6 @@ matrix:
     - env: TARGET=i386-apple-ios
            CARGO_TARGET_I386_APPLE_IOS_RUNNER=$HOME/runtest
            RUSTFLAGS=-Clink-arg=-mios-simulator-version-min=7.0
-           NORUN=1
       rust: nightly      
       os: osx
       osx_image: xcode8.2
@@ -33,7 +32,6 @@ matrix:
     - env: TARGET=x86_64-apple-ios
            CARGO_TARGET_X86_64_APPLE_IOS_RUNNER=$HOME/runtest
            RUSTFLAGS=-Clink-arg=-mios-simulator-version-min=7.0
-           NORUN=1
       rust: nightly
       os: osx
       osx_image: xcode8.2
@@ -53,14 +51,6 @@ matrix:
         - cargo fmt -- --write-mode=diff
   allow_failures:
     - env: RUSTFMT
-    - env: TARGET=i386-apple-ios
-           CARGO_TARGET_I386_APPLE_IOS_RUNNER=$HOME/runtest
-           RUSTFLAGS=-Clink-arg=-mios-simulator-version-min=7.0
-           NORUN=1
-    - env: TARGET=x86_64-apple-ios
-           CARGO_TARGET_X86_64_APPLE_IOS_RUNNER=$HOME/runtest
-           RUSTFLAGS=-Clink-arg=-mios-simulator-version-min=7.0
-           NORUN=1
     - env: TARGET=aarch64-apple-ios NORUN=1
     - env: TARGET=armv7-apple-ios NORUN=1
 script:
