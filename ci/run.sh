@@ -7,6 +7,7 @@ set -ex
 echo "Running tests for target: ${TARGET}"
 export RUST_BACKTRACE=1
 export RUST_TEST_THREADS=1
+export XCODE_VERSION=$(/usr/bin/xcodebuild -version | grep "Xcode")
 
 if [[ $TARGET == *"ios"* ]]; then
     export RUSTFLAGS=-Clink-arg=-mios-simulator-version-min=7.0
