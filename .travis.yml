@@ -3,24 +3,62 @@ language: rust
 matrix:
   fast_finish: true
   include:
+    # Stable targets:
     - env: TARGET=x86_64-apple-darwin
       rust: 1.11.0
-      os: osx
-    - env: TARGET=x86_64-apple-darwin
-      rust: beta
-      os: osx
-    - env: TARGET=x86_64-apple-darwin
-      rust: nightly
       os: osx
     - env: TARGET=i686-apple-darwin
       rust: 1.11.0
       os: osx
-    - env: TARGET=i686-apple-darwin
+    # Beta targets:
+    - env: TARGET=x86_64-apple-darwin
       rust: beta
       os: osx
     - env: TARGET=i686-apple-darwin
+      rust: beta
+      os: osx
+
+   # Nightly targets   
+    - env: TARGET=x86_64-apple-darwin
       rust: nightly
       os: osx
+      # osx_image: default == xcode8.3
+    - env: TARGET=i686-apple-darwin
+      rust: nightly
+      os: osx
+      # osx_image: default == xcode8.3
+    - env: TARGET=x86_64-apple-darwin
+      rust: nightly
+      os: osx
+      osx_image: xcode9.2
+    - env: TARGET=i686-apple-darwin
+      rust: nightly
+      os: osx
+      osx_image: xcode9.2
+    - env: TARGET=x86_64-apple-darwin
+      rust: nightly
+      os: osx
+      osx_image: xcode8
+    - env: TARGET=i686-apple-darwin
+      rust: nightly
+      os: osx
+      osx_image: xcode8
+    - env: TARGET=x86_64-apple-darwin
+      rust: nightly
+      os: osx
+      osx_image: xcode7.3
+    - env: TARGET=i686-apple-darwin
+      rust: nightly
+      os: osx
+      osx_image: xcode7.3
+    - env: TARGET=x86_64-apple-darwin
+      rust: nightly
+      os: osx
+      osx_image: xcode6.4
+    - env: TARGET=i686-apple-darwin
+      rust: nightly
+      os: osx
+      osx_image: xcode6.4
     - env: TARGET=i386-apple-ios
            CARGO_TARGET_I386_APPLE_IOS_RUNNER=$HOME/runtest
            RUSTFLAGS=-Clink-arg=-mios-simulator-version-min=7.0
