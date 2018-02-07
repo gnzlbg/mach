@@ -7,10 +7,9 @@ set -ex
 echo "Running tests for target: ${TARGET}"
 export RUST_BACKTRACE=1
 export RUST_TEST_THREADS=1
-export XCODE_VERSION=$(/usr/bin/xcodebuild -version | grep "Xcode")
 
 if [[ $TARGET == *"ios"* ]]; then
-    export RUSTFLAGS=-Clink-arg=-mios-simulator-version-min=7.0
+    export RUSTFLAGS="-C link-args"=-mios-simulator-version-min=7.0
     rustc ./ci/deploy_and_run_on_ios_simulator.rs -o ios_cargo_runner
     if [[ $TARGET == "x86_64-apple-ios" ]]; then
         CARGO_TARGET_X86_64_APPLE_IOS_RUNNER=$(pwd)/ios_cargo_runner
