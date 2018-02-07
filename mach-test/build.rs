@@ -177,8 +177,9 @@ fn main() {
             // * i686: byte 0: rust: 5 (0x5) != c 4 (0x4)
             "TASK_BASIC_INFO" |
             // FIXME: wrong value: byte 0: rust: 11 (0xb) != c 13 (0xd)
-            "VM_REGION_EXTENDED_INFO"
-
+            "VM_REGION_EXTENDED_INFO" |
+            // FIXME: added in MacOSX 10.11.0 (XCode 7.3)
+            "TASK_VM_INFO_PURGEABLE_ACCOUNT" | "TASK_FLAGS_INFO" | "TASK_DEBUG_INFO_INTERNAL"
             => true,
             _ => false,
         }
