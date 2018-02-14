@@ -12,12 +12,12 @@ export RUST_TEST_THREADS=1
 
 if [[ $TARGET == *"ios"* ]]; then
     export RUSTFLAGS='-C link-args=-mios-simulator-version-min=7.0'
-    rustc ./ci/deploy_and_run_on_ios_simulator.rs -o $HOME/ios_cargo_runner --verbose
+    rustc ./ci/deploy_and_run_on_ios_simulator.rs -o ios_cargo_runner --verbose
     if [[ $TARGET == "x86_64-apple-ios" ]]; then
-        CARGO_TARGET_X86_64_APPLE_IOS_RUNNER=$HOME/ios_cargo_runner
+        CARGO_TARGET_X86_64_APPLE_IOS_RUNNER=$(pwd)/ios_cargo_runner
     fi
     if [[ $TARGET == "i386-apple-ios" ]]; then
-        CARGO_TARGET_I386_APPLE_IOS_RUNNER=$HOME/ios_cargo_runner
+        CARGO_TARGET_I386_APPLE_IOS_RUNNER=$(pwd)/ios_cargo_runner
     fi
 fi
 
