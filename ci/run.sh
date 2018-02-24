@@ -14,10 +14,10 @@ if [[ $TARGET == *"ios"* ]]; then
     export RUSTFLAGS='-C link-args=-mios-simulator-version-min=7.0'
     rustc ./ci/deploy_and_run_on_ios_simulator.rs -o ios_cargo_runner --verbose
     if [[ $TARGET == "x86_64-apple-ios" ]]; then
-        CARGO_TARGET_X86_64_APPLE_IOS_RUNNER=$(pwd)/ios_cargo_runner
+        export CARGO_TARGET_X86_64_APPLE_IOS_RUNNER=$(pwd)/ios_cargo_runner
     fi
     if [[ $TARGET == "i386-apple-ios" ]]; then
-        CARGO_TARGET_I386_APPLE_IOS_RUNNER=$(pwd)/ios_cargo_runner
+        export CARGO_TARGET_I386_APPLE_IOS_RUNNER=$(pwd)/ios_cargo_runner
     fi
 fi
 
@@ -37,12 +37,12 @@ cat build_std.txt | grep -q "use_std"
 
 # Runs mach's run-time tests:
 if [[ -z "$NORUN" ]]; then
-    cargo test --target $TARGET --verbose -- --nocapture
-    cargo test --no-default-features --target $TARGET --verbose -- --nocapture
+    cargo test --target $TARGET --verbose
+    cargo test --no-default-features --target $TARGET --verbose
 fi
 
 # Runs ctest to verify mach's ABI against the system libraries:
 if [[ $TRAVIS_RUST_VERSION == "beta" ]] || [[ $TRAVIS_RUST_VERSION == "nightly" ]]; then
-    cargo test --manifest-path mach-test/Cargo.toml --target $TARGET --verbose -- --nocapture
-    cargo test --no-default-features --manifest-path mach-test/Cargo.toml --target $TARGET --verbose -- --nocapture
+    cargo test --manifest-path mach-test/Cargo.toml --target $TARGET --verbose
+    cargo test --no-default-features --manifest-path mach-test/Cargo.toml --target $TARGET --verbose
 fi
