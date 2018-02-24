@@ -72,14 +72,6 @@ matrix:
       rust: nightly
       os: osx
       osx_image: xcode8.3
-    - env: TARGET=x86_64-apple-ios NORUN=1
-      rust: nightly
-      os: osx
-      osx_image: xcode7.3
-    - env: TARGET=x86_64-apple-ios NORUN=1
-      rust: nightly
-      os: osx
-      osx_image: xcode6.4
 
     # i386-apple-ios
     - env: TARGET=i386-apple-ios NORUN=1
@@ -98,14 +90,6 @@ matrix:
       rust: nightly
       os: osx
       osx_image: xcode8.3
-    - env: TARGET=i386-apple-ios NORUN=1
-      rust: nightly
-      os: osx
-      osx_image: xcode7.3
-    - env: TARGET=i386-apple-ios NORUN=1
-      rust: nightly
-      os: osx
-      osx_image: xcode6.4
 
     # Nightly targets: aarch64-apple-ios
     - env: TARGET=aarch64-apple-ios NORUN=1
