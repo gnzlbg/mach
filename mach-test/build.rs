@@ -53,11 +53,11 @@ fn main() {
         .header("mach/clock_reply.h")
         .header("mach/clock_types.h");
 
-    /*
     if xcode >= Xcode(8, 0) {
         cfg.header("mach/dyld_kernel.h");
     }
 
+    /*
     cfg.header("mach/error.h")
         .header("mach/exc.h")
         .header("mach/exception.h")
