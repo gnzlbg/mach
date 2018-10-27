@@ -57,7 +57,6 @@ fn main() {
         cfg.header("mach/dyld_kernel.h");
     }
 
-    /*
     cfg.header("mach/error.h")
         .header("mach/exc.h")
         .header("mach/exception.h")
@@ -112,7 +111,7 @@ fn main() {
         .header("mach/thread_info.h")
         .header("mach/thread_policy.h")
         .header("mach/thread_special_ports.h");
-
+    /*
     if xcode >= Xcode(7, 0) {
         cfg.header("mach/thread_state.h");
     }
