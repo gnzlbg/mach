@@ -53,6 +53,7 @@ fn main() {
         .header("mach/clock_reply.h")
         .header("mach/clock_types.h");
 
+    /*
     if xcode >= Xcode(8, 0) {
         cfg.header("mach/dyld_kernel.h");
     }
@@ -133,7 +134,6 @@ fn main() {
         .header("mach/vm_task.h")
         .header("mach/vm_types.h");
 
-    /*
     cfg.skip_struct(move |s| {
         match s {
             // TODO: this type is a bitfield and must be verified by hand
