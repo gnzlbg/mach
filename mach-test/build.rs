@@ -40,7 +40,7 @@ impl Xcode {
 fn main() {
     let xcode = Xcode::version();
     // kept on purpose for debugging:
-    // println!("cargo:warning=\"Xcode version: {:?}\"", xcode);
+    eprintln!("Xcode version: {:?}", xcode);
 
     let mut cfg = ctest::TestGenerator::new();
 
@@ -319,7 +319,9 @@ fn main() {
     // Include the directory where the header files are defined
     cfg.include("/usr/include");
 
+    eprintln!("generating!!");
     // Generate the tests, passing the path to the `*-sys` library as well as
     // the module to generate.
     cfg.generate("../src/lib.rs", "all.rs");
+    eprintln!("done generating!!");
 }

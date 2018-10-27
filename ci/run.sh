@@ -24,24 +24,24 @@ fi
 rustup target add $TARGET || true
 
 # Build w/o std
-cargo clean
-cargo build --target $TARGET --verbose 2>&1 | tee build_std.txt
-cargo build --no-default-features --target $TARGET --verbose 2>&1 | tee build_no_std.txt
+#cargo clean
+#cargo build --target $TARGET --verbose 2>&1 | tee build_std.txt
+#cargo build --no-default-features --target $TARGET --verbose 2>&1 | tee build_no_std.txt
 
 # Check that the no-std builds are not linked against a libc with default
 # features or the use_std feature enabled:
-cat build_std.txt | grep -q "default"
-cat build_std.txt | grep -q "use_std"
-! cat build_no_std.txt | grep -q "default"
-! cat build_no_std.txt | grep -q "use_std"
-# Make sure that the resulting build contains no std symbols
-! find target/ -name *.rlib -exec nm {} \; | grep "std"
+#cat build_std.txt | grep -q "default"
+#cat build_std.txt | grep -q "use_std"
+#! cat build_no_std.txt | grep -q "default"
+#! cat build_no_std.txt | grep -q "use_std"
+## Make sure that the resulting build contains no std symbols
+#! find target/ -name *.rlib -exec nm {} \; | grep "std"
 
 # Runs mach's run-time tests:
-if [[ -z "$NORUN" ]]; then
-    cargo test --target $TARGET --verbose
-    cargo test --no-default-features --target $TARGET --verbose
-fi
+#if [[ -z "$NORUN" ]]; then
+#    cargo test --target $TARGET --verbose
+#    cargo test --no-default-features --target $TARGET --verbose
+#fi
 
 # Runs ctest to verify mach's ABI against the system libraries:
 if [[ -z "$NOCTEST" ]]; then
