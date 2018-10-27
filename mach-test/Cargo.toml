@@ -9,7 +9,7 @@ mach = { path = "..", features = ["unstable"] }
 libc = "0.2"
 
 [build-dependencies]
-ctest = "0.2"
+ctest = { git = "https://github.com/gnzlbg/ctest", branch = "mach_ci" }
 
 [[test]]
 name = "main"
