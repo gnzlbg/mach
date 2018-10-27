@@ -38,12 +38,12 @@ impl Xcode {
 }
 
 fn main() {
-    /*
     let xcode = Xcode::version();
     // kept on purpose for debugging:
     eprintln!("Xcode version: {:?}", xcode);
 
     let mut cfg = ctest::TestGenerator::new();
+    /*
 
     // Include the header files where the C APIs are defined
     cfg.header("mach/boolean.h")
@@ -323,7 +323,8 @@ fn main() {
     eprintln!("generating!!");
     // Generate the tests, passing the path to the `*-sys` library as well as
     // the module to generate.
+    */
     cfg.generate("../src/lib.rs", "all.rs");
     eprintln!("done generating!!");
-    */
+    
 }
