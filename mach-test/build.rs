@@ -43,7 +43,6 @@ fn main() {
     eprintln!("Xcode version: {:?}", xcode);
 
     let mut cfg = ctest::TestGenerator::new();
-    /*
 
     // Include the header files where the C APIs are defined
     cfg.header("mach/boolean.h")
@@ -134,6 +133,7 @@ fn main() {
         .header("mach/vm_task.h")
         .header("mach/vm_types.h");
 
+    /*
     cfg.skip_struct(move |s| {
         match s {
             // TODO: this type is a bitfield and must be verified by hand
