@@ -38,6 +38,7 @@ impl Xcode {
 }
 
 fn main() {
+    /*
     let xcode = Xcode::version();
     // kept on purpose for debugging:
     eprintln!("Xcode version: {:?}", xcode);
@@ -324,4 +325,5 @@ fn main() {
     // the module to generate.
     cfg.generate("../src/lib.rs", "all.rs");
     eprintln!("done generating!!");
+    */
 }
