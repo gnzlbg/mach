@@ -86,8 +86,9 @@ fn main() {
         .header("mach/mach_voucher_types.h")
         .header("mach/machine.h")
         .header("mach/memory_object_types.h")
-        .header("mach/message.h")
-        .header("mach/ndr.h")
+        .header("mach/message.h");
+/*
+        cfg.header("mach/ndr.h")
         .header("mach/notify.h")
         .header("mach/policy.h")
         .header("mach/port.h")
@@ -111,7 +112,7 @@ fn main() {
         .header("mach/thread_info.h")
         .header("mach/thread_policy.h")
         .header("mach/thread_special_ports.h");
-    /*
+    
     if xcode >= Xcode(7, 0) {
         cfg.header("mach/thread_state.h");
     }
