@@ -113,9 +113,6 @@ fn main() {
         .header("mach/thread_policy.h")
         .header("mach/thread_special_ports.h");
 
-    /*
-
-
     if xcode >= Xcode(7, 0) {
         cfg.header("mach/thread_state.h");
     }
@@ -326,8 +323,7 @@ fn main() {
     eprintln!("generating!!");
     // Generate the tests, passing the path to the `*-sys` library as well as
     // the module to generate.
-    */
     cfg.generate("../src/lib.rs", "all.rs");
     eprintln!("done generating!!");
-    
+
 }
