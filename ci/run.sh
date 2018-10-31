@@ -48,6 +48,5 @@ fi
 
 # Runs ctest to verify mach's ABI against the system libraries:
 if [[ -z "$NOCTEST" ]]; then
-        cargo test --manifest-path mach-test/Cargo.toml --target $TARGET -vv
         cargo test --no-default-features --manifest-path mach-test/Cargo.toml --target $TARGET -vv
 fi
