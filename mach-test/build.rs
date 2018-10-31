@@ -86,9 +86,8 @@ fn main() {
         .header("mach/mach_voucher_types.h")
         .header("mach/machine.h")
         .header("mach/memory_object_types.h")
-        .header("mach/message.h");
-
-    cfg.header("mach/ndr.h")
+        .header("mach/message.h")
+        .header("mach/ndr.h")
         .header("mach/notify.h")
         .header("mach/policy.h")
         .header("mach/port.h")
