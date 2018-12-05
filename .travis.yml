@@ -29,7 +29,7 @@ matrix:
       rust: beta
       os: osx
       osx_image: xcode6.4
-    - name: "x86_64-apple-darwin - Rust nightly - xcode6.4"
+    - name: "x86_64-apple-darwin - Rust nightly - xcode6.4 !"
       env: TARGET=x86_64-apple-darwin
       rust: nightly
       os: osx
