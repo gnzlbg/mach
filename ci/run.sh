@@ -12,6 +12,7 @@ export RUST_TEST_NOCAPTURE=1
 export CARGO_INCREMENTAL=0
 export CARGO_CODEGEN_UNITS=1
 export RUSTFLAGS="-C codegen-units=1 "
+export RUST_MIN_STACK=32000000
 
 if [[ $TARGET == *"ios"* ]]; then
     RUSTFLAGS='${RUSTFLAGS} -C link-args=-mios-simulator-version-min=7.0' \
